@@ -47,10 +47,15 @@ def magio_playlist():
 
 @route("/service/epg")
 def magio_epg():
+    if os.path.exists(".epg.xmltv") and os.path.getsize(".epg.xmltv") > 0:
+        if (
+            datetime.now() - datetime.fromtimestamp(os.path.getmtime(".epg.xmltv"))
+        ).days < 7:
+            response.content_type = "application/xml"
+            return open(".epg.xmltv", "r").read()
+
     date_from = datetime.now() - timedelta(days=0)
-    date_to = datetime.now() + timedelta(
-        days=int(os.environ.get("MAGIO_GUIDE_DAYS", 7))
-    )
+    date_to = datetime.now() + timedelta(days=7)
 
     channels = get_channels()
     channel_ids = list(channels.keys())

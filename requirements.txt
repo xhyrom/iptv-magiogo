@@ -7,6 +7,8 @@ idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.4
 MarkupSafe==2.1.5
+python-xmltv @ git+https://github.com/mforkel/python-xmltv.git@878ee821d036ffb682b7598ac666cbf244cdfa5e
 requests==2.32.3
+roman==4.2
 urllib3==2.2.3
 Werkzeug==3.0.4

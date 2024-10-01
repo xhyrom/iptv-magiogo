@@ -9,7 +9,6 @@ services:
     ports:
       - "4589:4589"
     environment:
-      GOODWE_IP: ${GOODWE_IP}
       MAGIO_USERNAME: ${MAGIO_USERNAME}
       MAGIO_PASSWORD: ${MAGIO_PASSWORD}
       HOST: ${HOST}

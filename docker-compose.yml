@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  iptv-magiogo:
+    image: ghcr.io/xhyrom/iptv-magiogo:latest
+    restart: always
+    environment:
+      GOODWE_IP: ${GOODWE_IP}
+      MAGIO_USERNAME: ${MAGIO_USERNAME}
+      MAGIO_PASSWORD: ${MAGIO_PASSWORD}
+      HOST: ${HOST}

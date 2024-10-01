@@ -8,7 +8,7 @@ from bottle import route, redirect, response, request, template, run
 
 catchup = ' catchup="append" catchup-source="?utc={utc}&utcend={utcend}",'
 
-host, port = os.environ.get("HOST", "localhost:8888").split(":")
+host, port = os.environ.get("HOST", "0.0.0.0:4589").split(":")
 port = int(port)
 
 
@@ -78,5 +78,5 @@ def magio_play(id):
 print("Registering device")
 register_device()
 
-print(f"Starting server on {host}:{port}")
-run(host=host, port=port, reloader=False)
+print("Starting server on 0.0.0.0:4589")
+run(host="0.0.0.0", port=4589, reloader=False)

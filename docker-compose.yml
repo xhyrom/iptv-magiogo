@@ -4,6 +4,10 @@ services:
   iptv-magiogo:
     image: ghcr.io/xhyrom/iptv-magiogo:latest
     restart: always
+    env_file:
+      - .env
+    ports:
+      - "4589:4589"
     environment:
       GOODWE_IP: ${GOODWE_IP}
       MAGIO_USERNAME: ${MAGIO_USERNAME}

@@ -24,11 +24,13 @@ def magio_playlist():
             t
             + '#EXTINF:-1 provider="Magio GO" group-title="'
             + y["group"]
+            + '" tvg-id="'
+            + str(x)
             + '" tvg-logo="'
             + y["logo"]
             + '"'
             + catchup
-            + y["name"].replace(" HD", "")
+            + y["name"]
             + "\n"
             + input_stream_
             + "http://"
@@ -51,7 +53,8 @@ def magio_epg():
         if (
             datetime.now() - datetime.fromtimestamp(os.path.getmtime(".epg.xmltv"))
         ).days < 7:
-            response.content_type = "application/xml"
+            response.content_type = "application/octet-stream"
+            response.headers["Content-Disposition"] = "inline; filename=epg.xmltv"
             return open(".epg.xmltv", "r").read()
 
     date_from = datetime.now() - timedelta(days=0)
@@ -117,7 +120,8 @@ def magio_epg():
 
     writer.write(".epg.xmltv", True)
 
-    response.content_type = "application/xml"
+    response.content_type = "application/octet-stream"
+    response.headers["Content-Disposition"] = "inline; filename=epg.xmltv"
     return open(".epg.xmltv", "r").read()
 
 

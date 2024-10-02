@@ -1,10 +1,10 @@
-**Goodwe InfluxDB** is a simple service that scrapes data from the GoodWe inverter and puts them into the database.
+**IPTV Magiogo** is an IPTV service that provides a list of channels and EPG data directly from the [Magio Go](https://www.magiogo.sk/) website. \
 
 ### Requirements
 
-goodwe inverter [(ET, EH, BT, BH, ES, EM, BP, DT, MS, D-NS, and XS families should works)](https://github.com/marcelblijleven/goodwe) \
-[influxdb](https://www.influxdata.com/) \
-[python3](https://www.python.org/)
+[magiogo](https://magiogo.sk) \
+[python3](https://www.python.org/) \
+some IPTV player like [kodi](https://kodi.tv/)
 
 ### Installation
 
@@ -12,11 +12,15 @@ You can install and run the service using [docker compose](./docker-compose.yml)
 Don't forget to update environment variables!
 
 However, if you want to run it outside docker, install packages from [requirements.txt](./requirements.txt) and run <kbd>[src/main.py](./src/main.py)</kbd> with the following environment variables:
-`INFLUXDB_TOKEN, INFLUXDB_URL, INFLUXDB_ORG, INFLUXDB_BUCKET, GOODWE_IP`
+`MAGIO_USERNAME, MAGIO_PASSWORD, HOST`
 
 ```bash
 $ pip install -r requirements.txt
-$ INFLUXDB_TOKEN=hello INFLUXDB_URL=http://localhost:8086 INFLUXDB_ORG=org INFLUXDB_BUCKET=bucket GOODWE_IP=192.168.1.78 python src/main.py
+$ MAGIO_USERNAME=hello MAGIO_PASSWORD=asd HOST=localhost:4589 python src/main.py
 ```
 
-You can also run <kbd>[scripts/dump.py](./scripts/dump.py)</kbd> that returns all sensors.
+### Routes
+
+- `/` - list of channels (viewable in browser)
+- `/service/playlist` - m3u playlist
+- `/service/epg` - epg data (xmltv format)

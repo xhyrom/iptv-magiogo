@@ -16,7 +16,7 @@ port = int(port)
 
 @route("/service/playlist")
 def magio_playlist():
-    input_stream_ = "#KODIPROP:inputstream=inputstream.ffmpegdirect\n#KODIPROP:inputstream.ffmpegdirect.stream_mode=timeshift\n#KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true\n"
+    input_stream_ = "#KODIPROP:inputstream=inputstream.ffmpegdirect\n#KODIPROP:mimetype=application/x-mpegURL\n#KODIPROP:inputstream.ffmpegdirect.stream_mode=timeshift\n#KODIPROP:inputstream.ffmpegdirect.is_realtime_stream=true\n"
     ch = get_channels()
     t = ""
     for x, y in ch.items():

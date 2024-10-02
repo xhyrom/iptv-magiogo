@@ -8,6 +8,8 @@ services:
       - .env
     ports:
       - "4589:4589"
+    volumes:
+      - "/etc/localtime:/etc/localtime:ro"
     environment:
       MAGIO_USERNAME: ${MAGIO_USERNAME}
       MAGIO_PASSWORD: ${MAGIO_PASSWORD}

@@ -1,0 +1,6 @@
+[providers]
+[providers.sourcehut]
+ssh = "git@git.sr.ht:~hyro/iptv-magiogo"
+primary = true
+[providers.github]
+ssh = "git@github.com:xhyrom/iptv-magiogo.git"

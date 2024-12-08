@@ -61,6 +61,7 @@ def get_stream(id):
             req = requests.get(url, headers=headers, allow_redirects=False)
             return req.headers["location"]
         else:
+            print(req)
             return "http://sledovanietv.sk/download/noAccess-sk.m3u8"
     else:
         return "http://sledovanietv.sk/download/noAccess-sk.m3u8"

@@ -1,4 +1,4 @@
-**IPTV Magiogo** is an IPTV service that provides a list of channels and EPG data directly from the [Magio Go](https://www.magiogo.sk/) website. \
+**IPTV Magiogo** is an IPTV service that provides a list of channels and EPG data directly from the [Magio Go](https://www.magiogo.sk/) website.
 
 ### Requirements
 

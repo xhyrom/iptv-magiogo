@@ -1,9 +1,10 @@
 # Taken from https://github.com/Saros72/IPTV-Web-Server/blob/main/providers/magio/login.py
 
-import requests
-import os
 import json
+import os
 import sys
+
+import requests
 
 # Constants
 USER_AGENT = "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36"
@@ -39,7 +40,7 @@ def login():
         "deviceName": DEVICE_NAME,
         "deviceType": DEVICE_TYPE,
         "osVersion": "18.0",
-        "appVersion": "4.0.18",
+        "appVersion": "4.0.21-hf.0",
         "language": "SK",
     }
     headers = {
